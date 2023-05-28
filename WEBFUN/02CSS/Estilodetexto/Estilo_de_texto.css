@@ -1,0 +1,31 @@
+#mycloud {
+  background-color: black;
+  color:whitesmoke;
+}
+
+#mycloud span:first-child {
+  color: white;
+}
+
+#mycloud span:last-child {
+  color: cyan;
+}
+
+  h2 {
+    background-color: blueviolet;
+  text-align: center;
+  color: whitesmoke;
+  font-family: cursive;
+  font-size: larger;
+  
+  }
+
+  h3 {
+    background-color: lightskyblue;
+  text-align: right;
+  color: rgb(26, 0, 26);
+  font-family: cursive;
+  font-size: larger;
+  text-decoration:underline;
+  }
+  

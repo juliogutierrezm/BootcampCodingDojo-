@@ -1,0 +1,61 @@
+.container {
+    background-color: white;
+    width: 500px;
+    margin: 0 auto;
+    border: 3px solid darkgray;
+    padding: 0;
+    position: relative;
+}
+.user {
+    height: 75px;
+    background-color: rgb(27, 183, 183);
+    padding: 5px;
+    margin: 25x;
+
+}
+.user-circle {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    filter: invert(1);
+    border: 3px solid gray; 
+    border-radius: 50%; 
+    position: relative;
+    bottom: -35px;
+}
+.nombre {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 25px;
+    padding: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.ubicacion {
+    display: flex;
+    padding: 1px;
+    align-items: flex-start
+}
+.imagen-ubicacion {
+    width: auto;
+    height: 30px;
+    margin: 10px;
+}
+
+.datos {
+    margin: 5px; 
+}
+
+.editprofile {
+    display: flex;
+    height: 15px;
+    align-items: center;
+    margin: 0;
+    text-decoration: underline;
+}
+
+.gear {
+    width: auto;
+    height: 15px;
+    margin: 5px;
+    
+}

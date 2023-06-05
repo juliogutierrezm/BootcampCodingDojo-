@@ -1,0 +1,255 @@
+/* Estilos del botón */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+.btn:active {
+  background-color: #3e8e41;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: gray;
+}
+
+/* Estilos adicionales */
+h1 {
+  background-color: rgb(42, 42, 42);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  align-content: center;
+}
+
+.nav {
+  background-color: rgb(42, 42, 42);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 70px;
+}
+
+
+.nav-links, .nav-title {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  background-color: white;
+  width: 100%;
+  border: 3px solid darkgray;
+  padding: 10px;
+  margin-bottom: 20px;
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+
+.bottom-container {
+  background-color: white;
+  border: 3px solid darkgray;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 500px;
+  flex-basis: 50%;
+  box-sizing: border-box;
+  height: 210px;
+}
+
+.side-container1,
+.side-container2 {
+  background-color: white;
+  width: 300px;
+  border: 3px solid darkgray;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: auto;
+  flex-basis: 50%;
+  box-sizing: border-box;
+}
+
+.content-side {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.side-containers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+.user {
+  height: 75px;
+  background-color: rgb(27, 183, 183);
+  padding: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user-circle {
+  width: 70px;
+  height: 70px;
+  filter: invert(1);
+  border: 3px solid gray;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  bottom: -40px;
+}
+
+.nombre {
+  margin-top: 25px;
+  padding: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: x-large;
+}
+
+.ubicacion {
+  display: flex;
+  align-items: center;
+}
+
+.imagen-ubicacion {
+  width: auto;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.datos {
+  margin-top: 10px;
+}
+
+.editprofile {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+}
+
+.gear {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.crequest,
+.Connections {
+  margin: 5px;
+
+}
+
+.oval {
+  background-color: rgb(79, 82, 82);
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  margin-right: 5px;
+  font-size: smaller;
+}
+
+.request-item,
+.connection-item, h2 {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 1px;
+}
+
+.phill,
+.todd,
+.adrien,
+.anne,
+.alayne,
+.arry,
+.right-circle {
+  margin-top: 15px ;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.check,
+.equis {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  position: relative;
+  left: 100px;
+}
+
+.education {
+  margin-bottom: 10px;
+}
+
+.educacion,
+h2 {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  height: 50px;
+  margin: -10px;
+}
+
+.date {
+  font-size: smaller;
+}
+
+
+
+.view-more {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.view-more p {
+  text-decoration:underline;
+  color: black;
+
+}
+
+

@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 100px;
+    gap: -5px;
+    max-width: 800px;
+
+    flex-direction: column;
+}
+
+/* Barra de navegacion 1 */
+
+.main-nav-bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 12px;
+    padding: 5px;
+    text-decoration: none;
+    align-items: center;
+
+}
+
+.nav-bar1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.hoja-logo {
+    height: 35px;
+    width: auto;
+    background-color: aquamarine;
+    transform: rotate(180deg);
+}
+
+.white-text {
+    color: rgb(0, 0, 0);
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: solid gray;
+    border-radius: 15px;
+    width: 300px;
+    background-image: url("images/search-dark.png");
+    background-size: 20px;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+    filter: hue-rotate(120deg);
+}
+
+.Sing-in {
+    display: flex;
+    align-self: center;
+    text-decoration: none;
+}
+
+.carrito {
+    display: flex;
+    height: 30px;
+    width: auto;
+    margin-left: 10px;
+    position: relative;
+    top: -5px;
+}
+
+/* Barra de navegacion 2 */
+.nav-bar2 {
+    display: flex;
+    margin: 12px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.hr {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    width: 90%;
+}
+
+.links-nav-bar a {
+    text-decoration: none;
+    margin: 12px;
+    color: black;
+}
+
+.central-text {
+    margin-top: 10px;
+    font-family: cursive;
+}
+
+/* Contenedores centrales */
+
+.main_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 50px;
+}
+
+.left-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.green-text-box {
+    background-color: rgb(43, 202, 149);
+    width: 220px;
+    height: 210px;
+    color: aliceblue;
+    padding: 3px;
+}
+
+.text-box {
+    padding: 3px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-family: cursive;
+}
+
+.Discover {
+    display: flex;
+    background-color: rgb(43, 202, 149);
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 60px;
+    font-family: cursive;
+}
+
+.arrow-light {
+    width: 24px;
+    height: 24px;
+    align-self: center;
+}
+
+.center-image {
+    position: relative;
+    width: 230px;
+    height: 216px;
+    overflow: hidden;
+}
+
+.center-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.hover-image {
+    opacity: 0;
+}
+
+/* Contenedor derecho */
+
+.rigth-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rigth-foto img {
+    display: flex;
+    width: 230px;
+    max-height: 140px; /* Ajustar la altura máxima de la imagen */
+}
+
+.Smoothing {
+    display: flex;
+    width: 230px;
+    height: 60px;
+    background-color: rgb(43, 202, 149);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.Smoothing-Aloe-text {
+    align-self: center;
+    font-family: cursive;
+}
+
+/* Footer */
+
+.footer-container {
+    display: flex;
+    margin: 10px 50px;
+    background-color: rgb(121, 203, 209);
+    padding: 10px;
+    justify-content: center;
+}
+
+.footer-photos {
+    display: flex;
+    width: 650px;
+    justify-content: space-between;
+    height: 150px;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+.photo-settings {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 5px;
+    flex-direction: column;
+}
+
+.label {
+    display: flex;
+    align-self: center;
+    margin-left: 30px;
+}
+
+.footer-text {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    border: solid black;
+    margin: 50px;
+    margin-top: -50px;
+    align-items: center;
+    font-family: cursive;
+    background-color: white;
+}
+
+.cookie-text{
+    text-decoration: underline;
+    color: blue;
+
+}
+.I-accept-button,
+button {
+    display: flex;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(43, 202, 149);
+    color: white;
+    border: solid black;
+    border-radius: 0px;
+    box-shadow: 3px 3px 0px rgb(0, 0, 0);
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin-right: 8px;
+    align-self: center;
+}

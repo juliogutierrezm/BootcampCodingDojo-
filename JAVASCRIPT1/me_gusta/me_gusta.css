@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red;  */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 100px;
+    gap: -5px;
+    max-width: 800px;
+    flex-direction: column;
+}
+
+
+    .h2 {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+
+
+
+.nav-bar, title {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px;
+    padding: 15px;
+    text-decoration: none;
+    align-items: flex-start;
+    background-color: black;
+    color: aliceblue;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 800px ;
+    align-items: start;
+
+}
+
+.sidebar-l {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin: 10px;
+    flex-grow: 1;
+    border: solid black;
+    gap: 50px;
+
+}
+.sidebar-r {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    padding: 5px;
+    margin: 10px;
+    gap: 20px;
+
+}
+
+.sidebar-r-content{
+    gap: 25px;
+    border: solid black;
+}
+.top-content {
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.text {
+    padding: 30px;
+}
+#like, button {
+
+    width: 50px;
+    height: 20px;
+    background-color: rgba(211, 211, 71, 0.827);
+    color: rgb(0, 0, 0);
+    border: solid black;
+    border-radius: 0px;
+    box-shadow: 3px 3px 0px rgb(0, 0, 0);
+    font-size: 12px;
+    font-weight: bold;
+
+}

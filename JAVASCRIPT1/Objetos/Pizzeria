@@ -1,0 +1,21 @@
+function pizzaOven(tipoCorteza, salsa, queso, ingredientes) {
+    var pizza = {};
+    pizza.tipoCorteza = [tipoCorteza, "tradicional"];
+    pizza.salsa = salsa;
+    pizza.queso = queso;
+    pizza.ingredientes = ingredientes;
+    return pizza;
+}
+
+    var p1 = pizzaOven("tradicional", "tomate", ["mozzarella"], ["pepperoni", "salchicha"]);
+    console.log(p1);
+
+    var p2 = pizzaOven("lanzada a mano", "tomate", ["mozzarella", "feta"], ["champinones", "aceitunas", "cebolla"]);
+    console.log(p2);
+    
+    var p3 = pizzaOven("estilo NY", "marinara", ["mozzarella", "parmesano"], ["cebolla", "pimientos"]);
+    console.log(p3);
+    
+    var p4 = pizzaOven("sin gluten", "pesto", ["queso de cabra"], ["espinacas", "tomate seco"]);
+    console.log(p4);
+    

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 const ProductForm = () => {
+  const navigate = useNavigate();
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productDescription, setProductDescription] = useState('');
@@ -14,13 +16,14 @@ const ProductForm = () => {
         name: productName,
         price: productPrice,
         description: productDescription,
-      })
+      }) 
       .then((res) => {
         console.log(res.data); // Puedes manejar la respuesta como sea necesario
         // Reiniciar los estados de los campos
         setProductName('');
         setProductPrice('');
         setProductDescription('');
+        navigate('/'); // Redirigir a la página de lista después de crear el producto
       })
       .catch((err) => {
         console.log(err);

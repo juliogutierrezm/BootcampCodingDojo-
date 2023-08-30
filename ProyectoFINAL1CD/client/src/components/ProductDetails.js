@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useParams } from 'react-router-dom';
 import { Card, ListGroup, Button, Container, Row, Col } from 'react-bootstrap';
 import { ImCart } from 'react-icons/im';
+import Navbar from './NavBar';
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -24,8 +25,10 @@ const ProductDetails = () => {
   console.log(product); // Verificar el contenido de product
 
   return (
-    <Container className="mt-4">
-      <Row>
+    <Container className="mt-1 p-2">
+    <Navbar/>
+      
+      <Row className="mt-4 p-2">
         <Col md={6}>
         <Card style={{ width: '100%' }}>
         <Card.Img

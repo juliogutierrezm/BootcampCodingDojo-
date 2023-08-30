@@ -4,14 +4,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
 import Cart from "./Cart";
 import { Container, Row, Col, Image, Dropdown } from "react-bootstrap";
-import { ImCart,  } from "react-icons/im";
+import { ImCart } from "react-icons/im";
+import Navbar from "./NavBar";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     axios
       .get("http://localhost:8000/api/products")
@@ -60,21 +61,18 @@ const ProductList = () => {
   };
 
    return (
-    <div className="container mt-4">
-      <div className="d-flex justify-content-end mb-3">
-        <button className="btn btn-primary " onClick={() => navigate("/form")}>
-          Go to Form
-        </button>
-        <button className="btn btn-outline-primary " onClick={() => navigate("/cart")}>
-    <ImCart />
-        </button>
-      </div>
-      <h2 className="mb-4">Product List</h2>
-      <Container >
+   
+   
+    <Container className="mt-1 p-2">
+    <Navbar/>
+      <Container >  
+       <h2 className="mb-4 mt-4 text-start  text-secondary font-weight-bold">
+        Products
+      </h2>
         <Row>
           {products.map((product) => (
             <Col key={product._id} xs={12} md={6} lg={4} className="mb-4 ">
-              <div className="border p-3 d-flex flex-column align-items-center">
+              <div className="border border-primary p-3 d-flex flex-column align-items-center">
               <Link to={`/product/${product._id}`}>
               <Image
               src={product.image}
@@ -89,7 +87,7 @@ const ProductList = () => {
                 <p className="text-center">Monthly Rent: ${product.price}</p>
                 <div className=" d-flex justify-content-around w-100 ">
                 <Dropdown className="mt-auto">
-                  <Dropdown.Toggle variant="info" id="dropdown-basic">
+                  <Dropdown.Toggle variant="outline-info border-primary" id="dropdown-basic">
                     Months: {selectedQuantities[product._id]}
                   </Dropdown.Toggle>
 
@@ -105,10 +103,10 @@ const ProductList = () => {
                     </Dropdown.Menu>
                     </Dropdown>
                   <button
-                    className="btn btn-outline-success"
+                    className="btn border-primary btn-outline-success"
                     onClick={() => addToCart(product)}
                   >
-                    Add to Cart <ImCart />
+                    Add to <ImCart />
                   </button>
                 </div>
               </div>
@@ -117,7 +115,7 @@ const ProductList = () => {
         </Row>
       </Container>
  {/*      <Cart cartItems={cart} /> */}
-    </div>
+    </Container>
   );
 };
 

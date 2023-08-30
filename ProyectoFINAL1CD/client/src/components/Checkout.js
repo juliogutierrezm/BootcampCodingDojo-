@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Navbar from "./NavBar";
 import {
   CardElement,
   Elements,
@@ -8,8 +9,9 @@ import {
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
-
-const stripePromise = loadStripe("pk_test_51NjW7fLde9dViuECcUDE4MGRZG0pXJpECUiCMNkg2j75Itsvp9YmmFS3BJVKWZZ7iYEEbo25CEEMjOaZcZsS0Bhw00t8mwl9PM");
+const stripePromise = loadStripe(
+  "pk_test_51NjW7fLde9dViuECcUDE4MGRZG0pXJpECUiCMNkg2j75Itsvp9YmmFS3BJVKWZZ7iYEEbo25CEEMjOaZcZsS0Bhw00t8mwl9PM"
+);
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -48,7 +50,7 @@ const CheckoutForm = () => {
 
     if (!error) {
       // Send payment details and paymentMethod.id to your backend
-      const response = await axios.post('http://localhost:8000/api/checkout', {
+      const response = await axios.post("http://localhost:8000/api/checkout", {
         paymentMethodId: paymentMethod.id,
         amount: paymentAmount * 100,
         products: cartProducts,
@@ -65,20 +67,21 @@ const CheckoutForm = () => {
   };
 
   return (
+    
     <div className="container mt-4">
       <div className="row">
-        <div className="col-md-6 d-flex flex-column justify-content-between">
-          <h2>Your Cart</h2>
+        <div className="col-md-6 d-flex  border-primary flex-column justify-content-between">
+          <h2>Checkout   ({cartProducts.length} Items)</h2>
           {cartProducts.map((product, index) => (
-            <div key={index} className="mb-3 p-3 bg-light rounded">
+            <div key={index} className="mb-3 p-3 bg-primary rounded">
               <h5>{product.name}</h5>
               <p>Total Price: ${product.price * product.quantity}</p>
             </div>
           ))}
         </div>
         <div className="col-md-6">
-          <form onSubmit={handleSubmit} className="card card-body ">
-            <h2>Checkout</h2>
+          <form onSubmit={handleSubmit} className="card text-center border-primary card-body ">
+            <h2>Make your payment</h2>
             <div className="form-group">
               <input
                 type="text"
@@ -90,9 +93,11 @@ const CheckoutForm = () => {
               <CardElement className="form-control mb-3" />
             </div>
             <div className="text-center">
-              <p className="font-weight-bold text-success">Total Amount: ${paymentAmount}</p>
-              <button className="btn btn-outline-info btn-block" type="submit" disabled={!stripe} style={{ width: '150px' }}>
-                Pay
+              <p className="font-weight-bold text-success">
+                Total Amount: ${paymentAmount}
+              </p>
+              <button className="btn  border-primary  btn-outline-warning w-100" type="button">
+                Place your order
               </button>
             </div>
           </form>
@@ -100,8 +105,6 @@ const CheckoutForm = () => {
       </div>
     </div>
   );
-  
-  
 };
 
 function Checkout() {

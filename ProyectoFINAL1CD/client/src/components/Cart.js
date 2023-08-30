@@ -3,6 +3,7 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap";
+import Navbar from './NavBar';
 
 const Cart = ({ cartItems }) => {
   const [cartProducts, setCartProducts] = useState([]);
@@ -47,27 +48,30 @@ const Cart = ({ cartItems }) => {
   };
 
   return (
-    <Container className="mt-4 p-4">
+
+
+    <Container className="mt-1 p-2">
+    <Navbar/> 
     <div className="container mt-4">
       <div className="row">
         <div className="col-md-6">
-          <h2>Cart</h2>
-          <ul className="list-group">
+          <h4>Shopping Cart</h4>
+          <ul className="list-group ">
             {cartProducts.map((product, index) => (
-              <li key={index} className="list-group-item d-flex justify-content-around w-100">
+              <li key={index} className="  border-primary list-group-item d-flex justify-content-around w-100">
               <div className='container mt-4'>
-              <div className="row">
+              <div className="row  ">
                 <div className="col-md-6">
                   <h4>{product.name}</h4>
                   <img src={product.image} alt={product.name} style={{ maxWidth: '125px' }} />
                 </div>
                 <div className="col-md-6">
                   <div className="text-right">
-                    <p className='text-success'>Monthly Rent: ${product.price}</p>
-                    <p className='text-success'>Rented Months: {product.quantity}</p>
+                    <p className='text-light '>Monthly Rent: ${product.price}</p>
+                    <p className='text-secondary'>Rented Months: {product.quantity}</p>
                     <p className='text-info'>Total Amount: ${product.price * product.quantity}</p>
                     <button
-                      className="btn btn-outline-danger btn-sm"
+                      className="btn border-primary btn-outline-danger btn-sm"
                       onClick={() => removeFromCart(product._id)}
                     >
                       Remove
@@ -83,13 +87,12 @@ const Cart = ({ cartItems }) => {
         </div>
         <div className="col-md-6 my-4 text-center">
           <div style={{ marginTop: '50px' }}>
-            <div className="card border-dark mb-3" style={{ maxWidth: '20rem' }}>
-              <h4 className="card-header">Checkout</h4>
+            <div className="card  border-primary  mb-3" style={{ maxWidth: '20rem' }}>
+            <h4 className="card-title mt-3">Cart Amount</h4>
               <div className="card-body">
-                <h4 className="card-title">Total Cart Amount</h4>
-                <p className="card-text text-warning">${totalPrice}</p>
-                <NavLink to="/checkout" className="btn btn-outline-info">
-                  Go to Checkout
+                <p className="card-text text-warning">Total ${totalPrice}</p>
+                <NavLink to="/checkout" className="btn  border-primary btn-outline-info">
+                Proceed to Checkout
                 </NavLink>
               </div>
             </div>

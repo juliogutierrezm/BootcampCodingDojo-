@@ -3,6 +3,8 @@ const express = require("express");
 const stripeController = require("./controllers/stripeController"); // Import the stripeController
 require("../server/config/mongoose.config");
 const app = express();
+const controllers = require("./controllers");
+const verifyToken = require("./middlewares/verifyToken");
 
 require("../server/config/mongoose.config"); // This is new
 
@@ -13,8 +15,11 @@ app.use(express.urlencoded({ extended: true }));
 
 require("../server/routes/product.routes")(app);
 require("../server/routes/cart.routes")(app);
+// Usuarios
 
-
+app.get("/user", verifyToken, controllers.getUserById);
+app.post("/register", controllers.register);
+app.post("/login", controllers.login);
 //Stripe
 app.post("/api/checkout", async (req, res) => {
   try {

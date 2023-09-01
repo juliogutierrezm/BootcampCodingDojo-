@@ -30,8 +30,10 @@ const Login = () => {
         setMensaje(data.mensaje);
         setTimeout(() => {
           setMensaje("");
-          localStorage.setItem("token", data?.usuario.token);
-          navigate(`/list`);
+          if (data?.usuario?.token) {
+            localStorage.setItem("token", data.usuario.token);
+            navigate(`/list`);
+          }
         }, 1500);
       } catch (error) {
         console.error(error);
@@ -40,8 +42,7 @@ const Login = () => {
           setMensaje("");
         }, 1500);
       }
-      setInputs({ correo: "", contraseña: "" });
-      setLoading(false);
+      
     }
   };
 
@@ -81,7 +82,7 @@ const Login = () => {
                   />
                 </div>
                 <button className="btn border-primary btn-info w-100" type="submit">
-                  {loading ? "Cargando..." : "Enter"}
+                  {"Enter"}
                 </button>
                 <p className="mt-3 text-center">
                   Don't have an account?{" "}

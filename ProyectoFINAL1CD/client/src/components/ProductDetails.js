@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useParams } from 'react-router-dom';
-import { Card, ListGroup, Button, Container, Row, Col } from 'react-bootstrap';
-import { ImCart } from 'react-icons/im';
-import Navbar from './NavBar';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router-dom";
+import { Card, ListGroup, Button, Container, Row, Col } from "react-bootstrap";
+import { ImCart } from "react-icons/im";
+import Navbar from "./NavBar";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -26,35 +26,34 @@ const ProductDetails = () => {
 
   return (
     <Container className="mt-1 p-2">
-    <Navbar/>
-      
-      <Row className="mt-4 p-2">
+      <Navbar />
+
+      <Row className=" mt-4 p-2">
         <Col md={6}>
-        <Card style={{ width: '100%' }}>
-        <Card.Img
-          variant="top"
-          src={product.image}
-          alt={product.name}
-          style={{ maxWidth: '300px' }}
-          className="mx-auto text-center"
-        />
-      </Card>
-      
+          <Card className="border-primary" style={{ width: "100%" }}>
+            <Card.Img
+              variant="top"
+              src={product.image}
+              alt={product.name}
+              style={{ maxWidth: "300px" }}
+              className="mx-auto text-center"
+            />
+          </Card>
         </Col>
         <Col md={6}>
-          <Card style={{ width: '100%'  }}>
+          <Card className="border-primary" style={{ width: "100%" }}>
             <Card.Body>
-             
-           
-              <ListGroup className="list-group-flush">
-              <ListGroup.Item>{product.description}</ListGroup.Item>
-              <ListGroup.Item>Monthly Rent : ${product.price}</ListGroup.Item>
-               
+              <ListGroup className="list-group-flush ">
+                <ListGroup.Item>{product.description}</ListGroup.Item>
+                <ListGroup.Item>Monthly Rent : ${product.price}</ListGroup.Item>
+                <a href="/list" className="btn btn-link border-primary mt-3">
+                Back to List
+              </a>{" "}
               </ListGroup>
-              <Button variant="btn btn-outline-success"> Add to Cart <ImCart/> </Button>
             </Card.Body>
           </Card>
         </Col>
+
       </Row>
     </Container>
   );

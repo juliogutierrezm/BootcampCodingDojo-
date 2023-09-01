@@ -18,7 +18,7 @@ const Cart = ({ cartItems }) => {
 
         // Calculate total price
         const total = productsData.reduce((acc, product) => {
-          const productPrice = product.price * product.quantity;
+          const productPrice = product.price * product.quantity * product.number
           return acc + productPrice;
         }, 0);
         setTotalPrice(total);
@@ -50,32 +50,34 @@ const Cart = ({ cartItems }) => {
   return (
 
 
-    <Container className="mt-1 p-2">
+    <Container className="mt-1 p-2 ">
     <Navbar/> 
-    <div className="container mt-4">
-      <div className="row">
-        <div className="col-md-6">
+    <div className="container mt-4 ">
+    
+      <div className="row ">
+        <div className="col-md-8">
           <h4>Shopping Cart</h4>
           <ul className="list-group ">
             {cartProducts.map((product, index) => (
-              <li key={index} className="  border-primary list-group-item d-flex justify-content-around w-100">
+              <li key={index} className="  border-primary list-group-item w-100 ">
               <div className='container mt-4'>
               <div className="row  ">
                 <div className="col-md-6">
                   <h4>{product.name}</h4>
                   <img src={product.image} alt={product.name} style={{ maxWidth: '125px' }} />
-                </div>
-                <div className="col-md-6">
+                  </div>
+                  <div className="col-md-6">
                   <div className="text-right">
-                    <p className='text-light '>Monthly Rent: ${product.price}</p>
-                    <p className='text-secondary'>Rented Months: {product.quantity}</p>
-                    <p className='text-info'>Total Amount: ${product.price * product.quantity}</p>
-                    <button
-                      className="btn border-primary btn-outline-danger btn-sm"
-                      onClick={() => removeFromCart(product._id)}
-                    >
-                      Remove
-                    </button>
+                  <p className='text-info'>Qty: {product.number}</p>
+                  <p className='text-info'>Monthly Rent: ${product.price}</p>
+                  <p className='text-info'>Rented Months: {product.quantity}</p>
+                  <p className='text-warning'>Total Amount: ${product.price * product.quantity * product.number}</p>
+                  <button
+                    className="btn border-primary btn-outline-danger btn-sm"
+                    onClick={() => removeFromCart(product._id)}
+                  >
+                    Remove
+                  </button>
                   </div>
                 </div>
               </div>
@@ -85,9 +87,9 @@ const Cart = ({ cartItems }) => {
             ))}
           </ul>
         </div>
-        <div className="col-md-6 my-4 text-center">
-          <div style={{ marginTop: '50px' }}>
-            <div className="card  border-primary  mb-3" style={{ maxWidth: '20rem' }}>
+        <div className="d-flex justify-content-center col-md-4  text-center">
+          <div style={{ marginTop: '100px' }} className='w-100 '>
+            <div className="card  border-primary  mb-3" style={{ maxWidth: '80rem' }}>
             <h4 className="card-title mt-3">Cart Amount</h4>
               <div className="card-body">
                 <p className="card-text text-warning">Total ${totalPrice}</p>

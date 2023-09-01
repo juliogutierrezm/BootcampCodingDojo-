@@ -11,13 +11,12 @@ import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/NavBar";
-import { UserProvider } from "./contexts/UserContext";
 import "bootswatch/dist/slate/bootstrap.min.css"; // quartz darkly solar cyborg sketchy slate superhero
 
 function App() {
   return (
     <BrowserRouter>
-        <UserProvider>
+
         <Routes>
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/register" element={<Register />} />
@@ -30,7 +29,7 @@ function App() {
         <Route path="/" element={<HomeCarousel />} />
         <Route path="/checkout" element={<Checkout />} />
         </Routes>
-        </UserProvider>
+    
     </BrowserRouter>
   );
 }

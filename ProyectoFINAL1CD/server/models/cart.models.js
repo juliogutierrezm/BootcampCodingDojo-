@@ -17,12 +17,16 @@ const CartSchema = new mongoose.Schema(
     },
     quantity: {
       type: Number,
-      min: [0, "Product quantity should be a positive value"],
+      min: [0, "Month quantity should be a positive value"],
     },
     description: {
       type: String,
       required: [true, "Product needs a description"],
       maxlength: [500, "Description should not exceed 200 characters"], // Corregido aquí
+    },
+    number: {
+      type: Number,
+      min: [0, "Product quantity should be a positive value"],
     },
   },
   {

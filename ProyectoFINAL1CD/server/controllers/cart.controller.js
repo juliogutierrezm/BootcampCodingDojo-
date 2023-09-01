@@ -6,7 +6,7 @@ module.exports = {
 getAllProductsCart: (req, res) => {
     CartModel.find(
       {},
-      { _id: true, name: true, price: true, description: true, image: true, quantity: true  }
+      { _id: true, name: true, price: true, description: true, image: true, quantity: true, number: true }
     )
       .then((products) => {
         res.json({ data: products });

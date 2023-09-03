@@ -87,9 +87,6 @@ const ProductList = () => {
       });
   };
 
-  // Resto del código del componente ProductList
-
-
   return (
     <Container className="mt-1 p-2">
       <Navbar />

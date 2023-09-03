@@ -8,6 +8,7 @@ import carrousel5 from "../images/carrousel5.png";
 import HomeCardGrid from "../components/HomeCardGrid";
 import HomeCardBenefits from "../components/HomeCardBenefits";
 import OtherBenefits from "../components/OtherBenefits";
+import Footer from "../components/HomeFooter";
 
 const HomeCarousel = () => {
   const carouselImageStyle = {
@@ -78,6 +79,9 @@ const HomeCarousel = () => {
       <div className=" mt-4 ">
         <OtherBenefits />
       </div>
+      <div className=" mt-4 ">
+      <Footer />
+    </div>
     </Container>
   );
 };

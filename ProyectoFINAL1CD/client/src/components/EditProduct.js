@@ -30,7 +30,7 @@ const ProductEdit = () => {
 
     try {
       await axios.patch(`http://localhost:8000/api/products/${id}`, product);
-      navigate('/'); // Redirigir a la lista de productos después de la actualización
+      navigate('/admin'); // Redirigir a la lista de productos después de la actualización
     } catch (error) {
       console.log(error);
     }
@@ -63,6 +63,17 @@ const ProductEdit = () => {
           />
         </div>
         <div className="form-group">
+        <label htmlFor="quantity">Quantity</label>
+        <input
+          type="number"
+          className="form-control"
+          id="quantity"
+          name="quantity"
+          value={product.quantity || ''}
+          onChange={handleInputChange}
+        />
+      </div>
+        <div className="form-group">
           <label htmlFor="description">Description</label>
           <textarea
             className="form-control"
@@ -73,17 +84,18 @@ const ProductEdit = () => {
           />
         </div>
         <div className="form-group">
-        <label htmlFor="name">URL</label>
+        <label htmlFor="image">Image URL</label>
         <input
           type="text"
           className="form-control"
-          id="name"
-          name="name"
+          id="image"
+          name="image"
           value={product.image || ''}
           onChange={handleInputChange}
         />
       </div>
-        <button type="submit" className="btn btn-primary">
+      
+        <button type="submit" className="btn btn-link btn-block mt-4 mb-4  text-uppercase text-warning" name="submit" value="submit" onClick={updateProduct}>
           Update Product
         </button>
       </form>

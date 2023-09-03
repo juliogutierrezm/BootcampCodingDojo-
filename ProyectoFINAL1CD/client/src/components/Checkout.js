@@ -50,15 +50,30 @@ const CheckoutForm = () => {
 
       if (response.status === 200) {
         console.log("Payment successful!");
+      
+        // Elimina los productos del carrito uno por uno
+        for (const product of cartProducts) {
+          try {
+            await axios.delete(`http://localhost:8000/api/cart/${product._id}`);
+          } catch (error) {
+            console.error("Error deleting product from cart:", error);
+          }
+        }
+      
+        // Actualiza el estado local del carrito a un arreglo vacío
+        setCartProducts([]);
+
+        setPaymentAmount(0);
+      
+        // Muestra un mensaje de éxito o realiza otras operaciones necesarias
         const successMessage = "Payment successful!";
         setMensaje(successMessage);
-
+      
         setTimeout(() => {
           setMensaje("");
           setCardholderName("");
           elements.getElement(CardElement).clear();
         }, 2000);
-
       } else {
         console.error("Payment failed.");
         const errorMessage = "Payment failed.";
@@ -77,6 +92,8 @@ const CheckoutForm = () => {
             <div key={index} className="mb-3 p-3 bg-primary rounded">
               <h5>{product.name}</h5>
               <p>Total Price: ${product.price * product.quantity * product.number}</p>
+              <p>Months Rented: {product.quantity}</p>
+              <p>Quantity: {product.number}</p>
             </div>
           ))}
         </div>

@@ -9,6 +9,7 @@ const ProductForm = () => {
   const [productPrice, setProductPrice] = useState('');
   const [productDescription, setProductDescription] = useState('');
   const [productImage, setProductImage] = useState(''); // Agrega el estado para la URL de la imagen
+  const [productQuantity, setProductQuantity] = useState('');
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
@@ -17,7 +18,8 @@ const ProductForm = () => {
         name: productName,
         price: productPrice,
         description: productDescription,
-        image: productImage, // Agrega la URL de la imagen al objeto enviado
+        image: productImage, 
+        quantity: productQuantity,
       }) 
       .then((res) => {
         console.log(res.data);
@@ -25,7 +27,8 @@ const ProductForm = () => {
         setProductPrice('');
         setProductDescription('');
         setProductImage('');
-        navigate('/');
+        setProductQuantity('');
+        navigate('/admin');
       })
       .catch((err) => {
         console.log(err);
@@ -46,35 +49,49 @@ const ProductForm = () => {
           />
         </div>
         <div className="mb-3">
-          <label className="form-label">Product Price</label>
-          <input
-            type="text"
-            className="form-control"
-            onChange={(e) => setProductPrice(e.target.value)}
-            value={productPrice}
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Product Description</label>
-          <textarea
+        <label className="form-label">Product Price</label>
+        <input
+          type="number" // Cambia el tipo de entrada a "number"
+          className="form-control"
+          onChange={(e) => setProductPrice(e.target.value)}
+          value={productPrice}
+        />
+      </div>
+      <div className="mb-3">
+        <label className="form-label">Product Quantity</label>
+        <input
+          type="number" // Cambia el tipo de entrada a "number"
+          className="form-control" // Utiliza "form-control" para aplicar estilos de Bootstrap
+          onChange={(e) => setProductQuantity(e.target.value)}
+          value={productQuantity}
+        />
+      </div>      
+            <div className="mb-3">
+            <label className="form-label">Product Description</label>
+            <textarea
             className="form-control"
             onChange={(e) => setProductDescription(e.target.value)}
             value={productDescription}
-          />
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Product Image URL</label>
-          <input
+            />
+            </div>
+            <div className="mb-3">
+            <label className="form-label">Product Image URL</label>
+            <input
             type="text"
             className="form-control"
             onChange={(e) => setProductImage(e.target.value)}
             value={productImage}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">Create</button>
-      </form>
-    </div>
-  );
-};
+            />
+            </div>
+            <div className='d-flex justify-content-between'>       <button type="submit" className="btn btn-link btn-block mt-4 mb-4  text-uppercase text-success">Create</button>
+            <br />
+            <a href="/admin" className="btn btn-link btn-block mt-4 mb-4">
+            Back to Products
+            </a>{" "}</div>
+      
+            </form>
+            </div>
+            );
+          };
 
 export default ProductForm;

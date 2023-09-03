@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
-import { Card, ListGroup, Button, Container, Row, Col } from "react-bootstrap";
-import { ImCart } from "react-icons/im";
+import { Card, ListGroup, Container, Row, Col } from "react-bootstrap";
 import Navbar from "./NavBar";
 
 const ProductDetails = () => {

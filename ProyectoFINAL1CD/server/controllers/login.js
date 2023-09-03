@@ -7,7 +7,7 @@ const login = async (req, res) => {
 
   Usuario.findOne({ correo }).then((usuario) => {
     if (!usuario) {
-      return res.json({ mensaje: "User not found" });
+      return res.json({ mensaje: "Incorrect email"  });
     }
  
     bcrypt.compare(contraseña, usuario.contraseña).then((esCorrecta) => {

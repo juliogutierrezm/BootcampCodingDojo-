@@ -12,6 +12,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Navbar from "./components/NavBar";
 import "bootswatch/dist/slate/bootstrap.min.css"; // quartz darkly solar cyborg sketchy slate superhero
+import ProductsAdmin from "./components/ProductsAdmin";
 
 function App() {
   return (
@@ -23,11 +24,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/list" element={<ProductList />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/form" element={<ProductForm />} />
-        <Route path="/edit/:id" element={<EditProduct />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/" element={<HomeCarousel />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/form" element={<ProductForm />} />
+        <Route path="/edit/:id" element={<EditProduct />} />
+        <Route path="/admin" element={<ProductsAdmin/>} />
         </Routes>
     
     </BrowserRouter>

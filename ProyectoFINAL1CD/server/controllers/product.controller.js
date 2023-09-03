@@ -7,7 +7,7 @@ module.exports = {
   getAllProducts: (req, res) => {
     ProductModel.find(
       {},
-      { _id: true, name: true, price: true, description: true, image: true, quantity: true  }
+      { _id: true, name: true, price: true, description: true, image: true, quantity: true, months: true  }
     )
       .then((products) => {
         res.json({ data: products });

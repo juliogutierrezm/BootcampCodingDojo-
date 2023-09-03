@@ -10,5 +10,50 @@
     z-index: 9999; /* Asegura que esté en la parte superior */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
- 
+
+  .error {
+    position: fixed;
+    bottom: 200px; /* Puedes ajustar la posición vertical */
+    right: 150px; /* Puedes ajustar la posición horizontal */
+    background-color: #a72859; /* Color de fondo verde (puedes ajustar el color) */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999; /* Asegura que esté en la parte superior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
   
+  .success {
+    position: fixed;
+    bottom: 80px; /* Puedes ajustar la posición vertical */
+    right: 450px; /* Puedes ajustar la posición horizontal */
+    background-color: #28a745; /* Color de fondo verde (puedes ajustar el color) */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999; /* Asegura que esté en la parte superior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .products {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .products ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit
+    minmax(200px,
+    1fr
+     )
+    );
+    gap: 1rem;
+  }
+  
+  .products li {
+    display: flex;
+    flex-direction: column;
+  }
+  
+ 

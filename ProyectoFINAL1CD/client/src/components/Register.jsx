@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./styles.css"; 
+import Navbar from "./NavBar";
+import { Card, ListGroup, Button, Container, Row, Col } from "react-bootstrap";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -48,8 +51,11 @@ const Register = () => {
       setLoading(false);
     }
   };
+  const messageClasses = mensaje ? (mensaje.includes("email") ? "error" : "success") : "";
 
   return (
+    <Container className="mt-1 p-2">
+      <Navbar />
     <div className="container mt-5 mb-5 ">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -107,12 +113,13 @@ const Register = () => {
                   </b>
                 </p>
               </form>
-              {mensaje && <div className="alert alert-success mt-3">{mensaje}</div>}
+              <div className={messageClasses}>{mensaje}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+      </Container>
   );
 };
 

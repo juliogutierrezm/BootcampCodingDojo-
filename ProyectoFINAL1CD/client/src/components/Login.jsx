@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./styles.css"; 
+import Navbar from "./NavBar";
+import {Container} from "react-bootstrap";
 
 const Login = () => {
   const [inputs, setInputs] = useState({ correo: "", contraseña: "" });
@@ -37,16 +39,20 @@ const Login = () => {
         }, 1500);
       } catch (error) {
         console.error(error);
-        setMensaje("Correo u contraseña incorrecta");
+        setMensaje("Incorrect password");
         setTimeout(() => {
           setMensaje("");
         }, 1500);
       }
-      
+      setLoading(false);
     }
   };
 
+  const messageClasses = mensaje ? (mensaje.includes("Incorrect ") ? "error" : "success") : "";
+
   return (
+    <Container className="mt-1 p-2">
+      <Navbar />
     <div className="container mt-5 mb-5 ">
       <div className="row justify-content-center">
         <div className="col-md-6 ">
@@ -91,12 +97,13 @@ const Login = () => {
                   </b>
                 </p>
               </form>
-              {mensaje && <div className="alert alert-success mt-3">{mensaje}</div>}
+              <div className={messageClasses}>{mensaje}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </Container>
   );
 };
 

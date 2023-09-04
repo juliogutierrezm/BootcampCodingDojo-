@@ -44,7 +44,7 @@ const ProductEdit = () => {
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control bg-dark text-white border-primary mb-3"
             id="name"
             name="name"
             value={product.name || ''}
@@ -52,10 +52,21 @@ const ProductEdit = () => {
           />
         </div>
         <div className="form-group">
+        <label htmlFor="price">Category</label>
+        <input
+          type="select"
+          className="form-control bg-dark text-white border-primary mb-3"
+          id="category"
+          name="category"
+          value={product.category || ''}
+          onChange={handleInputChange}
+        />
+      </div>
+        <div className="form-group">
           <label htmlFor="price">Price</label>
           <input
             type="number"
-            className="form-control"
+            className="form-control bg-dark text-white border-primary mb-3"
             id="price"
             name="price"
             value={product.price || ''}
@@ -66,7 +77,7 @@ const ProductEdit = () => {
         <label htmlFor="quantity">Quantity</label>
         <input
           type="number"
-          className="form-control"
+          c className="form-control bg-dark text-white border-primary mb-3"
           id="quantity"
           name="quantity"
           value={product.quantity || ''}
@@ -76,7 +87,7 @@ const ProductEdit = () => {
         <div className="form-group">
           <label htmlFor="description">Description</label>
           <textarea
-            className="form-control"
+          className="form-control bg-dark text-white border-primary mb-3"
             id="description"
             name="description"
             value={product.description || ''}
@@ -87,17 +98,21 @@ const ProductEdit = () => {
         <label htmlFor="image">Image URL</label>
         <input
           type="text"
-          className="form-control"
+          className="form-control bg-dark text-white border-primary mb-3"
           id="image"
           name="image"
           value={product.image || ''}
           onChange={handleInputChange}
         />
       </div>
-      
+      <div className='d-flex justify-content-between'> 
         <button type="submit" className="btn btn-link btn-block mt-4 mb-4  text-uppercase text-warning" name="submit" value="submit" onClick={updateProduct}>
           Update Product
         </button>
+        <br />
+        <a href="/admin" className="btn btn-link btn-block mt-4 mb-4">
+        Back to Products
+        </a>{" "}</div>
       </form>
     </div>
   );

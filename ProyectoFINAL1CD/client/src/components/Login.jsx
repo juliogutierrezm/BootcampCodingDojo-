@@ -8,7 +8,7 @@ import {Container} from "react-bootstrap";
 const Login = () => {
   const [inputs, setInputs] = useState({ correo: "", contraseña: "" });
   const [mensaje, setMensaje] = useState();
-  const [loading, setLoading] = useState(false);
+  
 
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const Login = () => {
         correo,
         contraseña,
       };
-      setLoading(true);
+      
       try {
         const response = await axios.post("http://localhost:8000/login", Usuario);
         const { data } = response;
@@ -44,7 +44,7 @@ const Login = () => {
           setMensaje("");
         }, 1500);
       }
-      setLoading(false);
+     
     }
   };
 

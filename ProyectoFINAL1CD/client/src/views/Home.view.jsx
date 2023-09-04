@@ -2,8 +2,8 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Container } from "react-bootstrap";
 import Navbar from "../components/NavBar";
-import carrousel1 from "../images/carrousel1.png";
-import carrousel6 from "../images/carrousel6.jpg";
+import carrousel4 from "../images/carrousel4.jpg";
+import carrousel6 from "../images/carrousel6.png";
 import carrousel5 from "../images/carrousel5.png";
 import HomeCardGrid from "../components/HomeCardGrid";
 import HomeCardBenefits from "../components/HomeCardBenefits";
@@ -12,7 +12,7 @@ import Footer from "../components/HomeFooter";
 
 const HomeCarousel = () => {
   const carouselImageStyle = {
-    maxHeight: "500px", // Ajusta el alto deseado para todas las imágenes
+    maxHeight: "450px", // Ajusta el alto deseado para todas las imágenes
     objectFit: "cover",
     // Cambia el ajuste del contenido de la imagen a 'contain'
   };
@@ -24,9 +24,35 @@ const HomeCarousel = () => {
         <h1 className="card-header   text-center">
           Welcome to Nomad Solutions
         </h1>
-         <hr />
+        <hr />
 
         <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 mb-2 img-fluid"
+            src={carrousel4}
+            alt="Carrousel 3"
+            style={carouselImageStyle}
+          />
+          <Carousel.Caption>
+          <h2 className=" ml-2 text-light">
+          Simplifying Your Digital World, Wherever You Are.
+            </h2>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 mb-2 img-fluid "
+            src={carrousel6}
+            alt="Carrousel 3"
+            style={carouselImageStyle}
+          />
+          <Carousel.Caption>
+            <h2 className=" ml-2 text-light">
+            Freedom to work, equipped anytime.
+            </h2>
+          </Carousel.Caption>
+        </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100 mb-2 img-fluid"
@@ -34,38 +60,7 @@ const HomeCarousel = () => {
               alt="Carrousel 1"
               style={carouselImageStyle}
             />
-            <Carousel.Caption>
-
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={carrousel6}
-              alt="Carrousel 2"
-              style={carouselImageStyle}
-            />
-            <Carousel.Caption>
-{/*               <h1>First slide label</h1>
-              <p className="fs-2 ml-2">
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
-  </p> */}
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={carrousel1}
-              alt="Carrousel 3"
-              style={carouselImageStyle}
-            />
-            <Carousel.Caption>
-{/*             <h1>First slide label</h1>
-            <p className="fs-2 ml-2">
-              Find out how you can rent your favorite tech, what advantages it
-              has and how we use fewer resources together.
-</p> */}
-            </Carousel.Caption>
+            <Carousel.Caption></Carousel.Caption>
           </Carousel.Item>
         </Carousel>
       </div>
@@ -80,8 +75,8 @@ const HomeCarousel = () => {
         <OtherBenefits />
       </div>
       <div className=" mt-4 ">
-      <Footer />
-    </div>
+        <Footer />
+      </div>
     </Container>
   );
 };

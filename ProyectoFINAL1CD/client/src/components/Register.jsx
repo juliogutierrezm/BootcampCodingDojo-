@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles.css"; 
 import Navbar from "./NavBar";
-import { Card, ListGroup, Button, Container, Row, Col } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 
 const Register = () => {
   const [inputs, setInputs] = useState({

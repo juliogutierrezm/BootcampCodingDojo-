@@ -5,9 +5,12 @@ const ProductModel = require("../models/product.models");
 module.exports = {
     
   getAllProducts: (req, res) => {
+    const { category } = req.query; // Obtiene la categoría de la consulta
+    const query = category ? { category } : {}; // Si se proporciona una categoría, la incluye en la consulta
+  
     ProductModel.find(
-      {},
-      { _id: true, name: true, price: true, description: true, image: true, quantity: true, months: true  }
+      query, // Utiliza la consulta para filtrar por categoría (si se proporciona)
+      { _id: true, name: true, price: true, description: true, image: true, quantity: true, months: true, category: true }
     )
       .then((products) => {
         res.json({ data: products });
@@ -16,6 +19,7 @@ module.exports = {
         res.status(500).json({ error: error });
       });
   },
+  
 
   getOneProduct: (req, res) => {
     let id = req.params.id;

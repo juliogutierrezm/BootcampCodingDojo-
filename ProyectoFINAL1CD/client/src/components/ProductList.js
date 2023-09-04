@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, useNavigate } from "react-router-dom";
-import Cart from "./Cart";
+import { Link,} from "react-router-dom";
 import { Container, Row, Col, Image, Dropdown } from "react-bootstrap";
 import { ImCart } from "react-icons/im";
 import Navbar from "./NavBar";
@@ -13,8 +12,9 @@ const ProductList = () => {
   const [cart, setCart] = useState([]);
   const [selectedQuantities, setSelectedQuantities] = useState({});
   const [selectedNumbers, setSelectedNumbers] = useState({});
-  const navigate = useNavigate();
   const [mensaje, setMensaje] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]); 
 
   useEffect(() => {
     axios
@@ -23,6 +23,7 @@ const ProductList = () => {
         setProducts(res.data.data);
         initializeSelectedQuantities(res.data.data);
         initializeSelectedNumbers(res.data.data);
+        setFilteredProducts(res.data.data); 
       })
       .catch((err) => {
         console.log(err);
@@ -86,6 +87,19 @@ const ProductList = () => {
         console.log('Error adding to cart:', err);
       });
   };
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
+    setSelectedCategory(category);
+
+    if (category === "") {
+
+      setFilteredProducts(products);
+    } else {
+
+      const filtered = products.filter((product) => product.category === category);
+      setFilteredProducts(filtered);
+    }
+  };
 
   return (
     <Container className="mt-1 p-2">
@@ -97,8 +111,32 @@ const ProductList = () => {
         <h2 className="mb-4 mt-4 text-start text-secondary font-weight-bold">
           Products
         </h2>
+        <div>
+        <select
+        className="form-select bg-dark text-white border-primary mb-4"
+          onChange={handleCategoryChange}
+          value={selectedCategory}
+        >
+          <option value="">All Categories</option>
+          <option value="cameras">Cameras</option>
+          <option value="chairs">Chairs</option>
+          <option value="controllers">Controllers</option>
+          <option value="desks">Desks</option>
+          <option value="headsets">Headsets</option>
+          <option value="keyboards">Keyboards</option>
+          <option value="laptops">Laptops</option>
+          <option value="microphones">Microphones</option>
+          <option value="monitors">Monitors</option>
+          <option value="mouses">Mouses</option>
+          <option value="sets">Sets</option>
+          <option value="webcams">Webcams</option>
+          <option value="others">Others</option>
+          {/* Agrega más categorías según sea necesario */}
+        </select>
+
+      </div>
         <Row>
-          {products.map((product) => (
+        {filteredProducts.map((product) => (
             <Col key={product._id} xs={12} md={6} lg={4} className="mb-4">
               <div className="border border-primary p-3 d-flex flex-column align-items-center">
                 <Link to={`/product/${product._id}`}>

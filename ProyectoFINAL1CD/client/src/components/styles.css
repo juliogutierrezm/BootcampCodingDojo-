@@ -2,7 +2,7 @@
 .floating-alert {
     position: fixed;
     top: 125px; /* Puedes ajustar la posición vertical */
-    right: 50px; /* Puedes ajustar la posición horizontal */
+    right: 200px; /* Puedes ajustar la posición horizontal */
     background-color: #28a745; /* Color de fondo verde (puedes ajustar el color) */
     color: #fff; /* Color del texto */
     padding: 10px 20px;
@@ -13,47 +13,51 @@
 
   .error {
     position: fixed;
-    bottom: 200px; /* Puedes ajustar la posición vertical */
-    right: 150px; /* Puedes ajustar la posición horizontal */
-    background-color: #a72859; /* Color de fondo verde (puedes ajustar el color) */
-    color: #fff; /* Color del texto */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #a72859;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
-    z-index: 9999; /* Asegura que esté en la parte superior */
+    z-index: 9999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInOut 3s forwards; /* Cambiar la duración de la animación según sea necesario */
   }
   
   .success {
     position: fixed;
-    bottom: 80px; /* Puedes ajustar la posición vertical */
-    right: 450px; /* Puedes ajustar la posición horizontal */
-    background-color: #28a745; /* Color de fondo verde (puedes ajustar el color) */
-    color: #fff; /* Color del texto */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
-    z-index: 9999; /* Asegura que esté en la parte superior */
+    z-index: 9999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeInOut 3s forwards; /* Cambiar la duración de la animación según sea necesario */
   }
   
-  .products {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .products ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit
-    minmax(200px,
-    1fr
-     )
-    );
-    gap: 1rem;
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
   
-  .products li {
-    display: flex;
-    flex-direction: column;
-  }
+  
+  
+
   
  

@@ -3,6 +3,7 @@ import axios from "axios";
 import { CardElement, Elements, useElements, useStripe } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
+
 const stripePromise = loadStripe("pk_test_51NjW7fLde9dViuECcUDE4MGRZG0pXJpECUiCMNkg2j75Itsvp9YmmFS3BJVKWZZ7iYEEbo25CEEMjOaZcZsS0Bhw00t8mwl9PM");
 
 const CheckoutForm = () => {
@@ -103,12 +104,12 @@ const CheckoutForm = () => {
             <div className="form-group">
               <input
                 type="text"
-                className="form-control mb-2"
+                className="form-control mb-3 bg-dark text-white border-primary"
                 placeholder="Name on Card"
                 value={cardholderName}
                 onChange={(e) => setCardholderName(e.target.value)}
               />
-              <CardElement className="form-control mb-3" />
+              <CardElement className="form-control mb-3 border-primary" />
             </div>
             <div className="text-center">
               <p className="font-weight-bold text-success">
@@ -138,9 +139,9 @@ function Checkout() {
   return (
     <Elements stripe={stripePromise}>
       <div className="container p2">
-        <div className="row">
-          <div className="col-md-8 offset-md-2">
-            <CheckoutForm />
+        <div className="row ">
+          <div className="col-md-8 offset-md-2 ">
+            <CheckoutForm/>
           </div>
         </div>
       </div>

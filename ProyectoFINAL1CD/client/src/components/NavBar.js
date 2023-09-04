@@ -7,7 +7,7 @@ const Navbar = () => {
     <Container>
       <nav className=" border-primary navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand " href="/">
             Nomad Solutions
           </a>
           <button

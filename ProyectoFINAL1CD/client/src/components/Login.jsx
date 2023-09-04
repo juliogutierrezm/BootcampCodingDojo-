@@ -58,36 +58,36 @@ const Login = () => {
         <div className="col-md-6 ">
           <div className="card border-primary">
             <div className="card-body">
-              <h1 className="card-title text-center">Welcome to Nomad Solutions</h1>
+              <h1 className="card-title text-center text-light">Welcome to Nomad Solutions</h1>
               <h3 className="card-subtitle mb-4 text-center">Login to your account here!</h3>
               <form onSubmit={(e) => onSubmit(e)}>
                 <div className="mb-3">
                   <label htmlFor="correo" className="form-label">E-mail</label>
                   <input
-                    className="form-control"
+                    className="form-control "
                     onChange={(e) => HandleChange(e)}
                     value={correo}
                     name="correo"
                     id="correo"
                     type="email"
-                    placeholder="Correo..."
+                    placeholder="E-mail..."
                     autoComplete="off"
                   />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="contraseña" className="form-label">Password</label>
                   <input
-                    className="form-control"
+                    className="form-control "
                     onChange={(e) => HandleChange(e)}
                     value={contraseña}
                     name="contraseña"
                     id="contraseña"
                     type="password"
-                    placeholder="Contraseña..."
+                    placeholder="Password..."
                     autoComplete="off"
                   />
                 </div>
-                <button className="btn border-primary btn-info w-100" type="submit">
+                <button className="btn border-primary btn-info w-100  " type="submit">
                   {"Enter"}
                 </button>
                 <p className="mt-3 text-center">

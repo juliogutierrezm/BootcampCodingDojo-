@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@stripe/react-stripe-js": "^2.1.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -10,8 +11,10 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.3.1",
     "bootswatch": "^5.3.1",
+    "jquery": "^3.7.1",
     "morgan": "^1.10.0",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.2.5",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
@@ -49,7 +52,6 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC"

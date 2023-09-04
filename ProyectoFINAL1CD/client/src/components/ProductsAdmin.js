@@ -25,18 +25,23 @@ const ProductsAdmin = () => {
       });
   }, []);
 
-  const deleteProduct = async (productId) => {
-    try {
-      await axios.delete(`http://localhost:8000/api/products/${productId}`);
-      const updatedProducts = products.filter(
-        (product) => product._id !== productId
-      );
-      setProducts(updatedProducts);
-      handleCloseConfirmation();
-    } catch (error) {
-      console.log(error);
+  const deleteProduct = async () => {
+    if (productToDelete) {
+      try {
+        await axios.delete(`http://localhost:8000/api/products/${productToDelete}`);
+        const updatedProducts = products.filter(
+          (product) => product._id !== productToDelete
+        );
+        setProducts(updatedProducts);
+        // Actualizar también filteredProducts
+        setFilteredProducts(updatedProducts);
+        handleCloseConfirmation();
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
+  
 
   const handleShowConfirmation = (productId) => {
     setProductToDelete(productId);

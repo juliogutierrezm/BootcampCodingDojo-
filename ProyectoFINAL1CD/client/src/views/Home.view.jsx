@@ -9,6 +9,8 @@ import HomeCardGrid from "../components/HomeCardGrid";
 import HomeCardBenefits from "../components/HomeCardBenefits";
 import OtherBenefits from "../components/OtherBenefits";
 import Footer from "../components/HomeFooter";
+import { Fade } from "react-awesome-reveal";
+
 
 const HomeCarousel = () => {
   const carouselImageStyle = {
@@ -21,8 +23,10 @@ const HomeCarousel = () => {
     <Container className="mt-1 p-2">
       <Navbar />
       <div className="container-md mt-4">
-        <h1 className="card-header   text-center">
+      <h1 className=" card-header text-center text-light">
+        <Fade delay={1e3} cascade damping={1e-1}>
           Welcome to Nomad Solutions
+        </Fade>
         </h1>
         <hr />
 
